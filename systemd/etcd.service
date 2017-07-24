@@ -1,0 +1,26 @@
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+WorkingDirectory=/var/lib/etcd/
+EnvironmentFile=-/etc/etcd/etcd.conf
+# set GOMAXPROCS to number of processors
+ExecStart=/usr/bin/etcd \
+--name=${ETCD_NAME} \
+--data-dir=${ETCD_DATA_DIR} \
+--listen-peer-urls=${ETCD_LISTEN_PEER_URLS} \
+--advertise-client-urls=${ETCD_ADVERTISE_CLIENT_URLS} \
+--initial-cluster-token=${ETCD_INITIAL_CLUSTER_TOKEN} \
+--initial-cluster=${ETCD_INITIAL_CLUSTER}  \
+--initial-cluster-state=${ETCD_INITIAL_CLUSTER_STATE} \
+--listen-client-urls=${ETCD_LISTEN_CLIENT_URLS}
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+
