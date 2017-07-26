@@ -45,7 +45,7 @@
 7. [部署Flanneld网络](07-部署Flanneld网络.md)
 8. [部署node节点](08-部署node节点].md)
 9. [部署配置kubedns插件](09-部署配置kubedns插件.md)
-10. [部署配置dashboard](10-部署配置dashboardmd)
+10. [部署配置dashboard](10-部署配置dashboard.md)
 11. [部署Heapster插件](11-部署Heapster插件.md)
 12. [部署EFK插件](12-部署EFK插件.md)
 
