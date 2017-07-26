@@ -1,4 +1,4 @@
-# kubernetes集群从开始到结束
+# kubernetes集群从入门到进阶
 
 **FYI：本文档仅作为kubernetes安装文档，<u>持续更新中</u>，欢迎大家围观和贡献
 
@@ -8,10 +8,10 @@
 
 部署完成后，你将理解系统各组件的交互原理，进而能快速解决实际问题。
 
-所以本文档主要适合于那些有一定 kubernetes 基础，想通过一步步部署的方式来学习和了解系统配置、运行原理的人。
+本文档主要适合于想通过一步步部署的方式来学习和了解系统配置、运行原理的人。
 
 
-注：本文档中不包括docker和私有镜像仓库的安装。
+注：本文档中不包括docker和私有镜像仓库的安装。(后续可增加)
 
 ## 提供所有的配置文件
 
@@ -32,7 +32,7 @@
 + RBAC 授权
 + kublet TLS BootStrapping
 + kubedns、dashboard、heapster(influxdb、grafana)、EFK(elasticsearch、fluentd、kibana) 集群插件
-+ 私有docker镜像仓库[harbor](github.com/vmware/harbor)（请自行部署，harbor提供离线安装包，直接使用docker-compose启动即可）
++ 私有docker镜像仓库[harbor](github.com/vmware/harbor)（请自行部署，harbor提供离线安装包，直接使用docker-compose启动即可）(后续可增加)
 
 ## 步骤介绍
 
