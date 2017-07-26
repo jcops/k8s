@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # kubernetes集群从开始到结束
 
 **FYI：本文档仅作为kubernetes安装文档，<u>持续更新中</u>，欢迎大家围观和贡献
