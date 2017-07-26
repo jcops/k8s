@@ -27,7 +27,7 @@
 + Kubernetes 1.6.2
 + Docker  1.12.5（使用yum安装）
 + Etcd 3.1.5
-+ Flanneld 0.7 vxlan 网络
++ Flanneld 0.7 vxlan 网络 （使用yum安装）
 + TLS 认证通信 (所有组件，如 etcd、kubernetes master 和 node)
 + RBAC 授权
 + kublet TLS BootStrapping
