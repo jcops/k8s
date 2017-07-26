@@ -48,7 +48,7 @@
 10. [部署配置dashboard](10-部署配置dashboard.md)
 11. [部署Heapster插件](11-部署Heapster插件.md)
 12. [部署EFK插件](12-部署EFK插件.md)
-
+13. [部署traefik-ingress插件](13-部署traefik-ingress插件.md)
 
 ## 提醒
 
