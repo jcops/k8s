@@ -173,7 +173,7 @@ metadata:
     #     # If you are NOT using this as an addon, you should comment out this line.
     kubernetes.io/cluster-service: 'true'
     kubernetes.io/name: monitoring-influxdb
-  name: monitoring-influxd
+  name: monitoring-influxdb
   namespace: kube-system
 spec:
   type: NodePort
@@ -276,12 +276,13 @@ Starting to serve on 192.168.1.121:8086
 
 ```
 # kubectl get svc -n kube-system|grep influxdb
-monitoring-influxd     10.254.193.23    <nodes>       8086:30426/TCP,8083:32494/TCP   51m
+monitoring-influxd     10.254.193.23    <nodes>       8086:31765/TCP,8083:32494/TCP   51m
 ```
 
 通过 kube-apiserver 的**非安全端口**访问 influxdb 的 admin UI 界面： `http://192.168.1.121:8080/api/v1/proxy/namespaces/kube-system/services/monitoring-influxdb:8083/`
 
-在页面的 “Connection Settings” 的 Host 中输入 node IP， Port 中输入 8086 映射的 nodePort 如上面的 30426，点击 “Save” 即可（我的集群中的地址是192.168.1.121:30426）：
+在页面的 “Connection Settings” 的 Host 中输入 node IP， Port 中输入 8086 映射的 nodePort 如上面的 31765，点击 “Save” 即可（我的集群中的地址是192.168.1.121:31765）：
+![kubernetes-influxdb-heapster](./images/kubernetes-influxdb-heapster1.png)
 
 ![kubernetes-influxdb-heapster](./images/kubernetes-influxdb-heapster.jpg)
 
