@@ -280,7 +280,9 @@ monitoring-influxdb     10.254.193.23    <nodes>       8086:31765/TCP,8083:32494
 ```
 
 通过 kube-apiserver 的**非安全端口**访问 influxdb 的 admin UI 界面： `http://192.168.1.121:8080/api/v1/proxy/namespaces/kube-system/services/monitoring-influxdb:8083/`
+
 也可以使用proxy的8086端口访问influxdb 的 admin UI 界面： `http://192.168.1.121:8086/api/v1/proxy/namespaces/kube-system/services/monitoring-influxdb:8083/`
+
 在页面的 “Connection Settings” 的 Host 中输入 node IP， Port 中输入 8086 映射的 nodePort 如上面的 31765，点击 “Save” 即可（我的集群中的地址是192.168.1.121:31765）：
 ![kubernetes-influxdb-heapster](./images/kubernetes-influxdb-heapster1.png)
 
