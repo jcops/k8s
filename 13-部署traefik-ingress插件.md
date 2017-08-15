@@ -212,7 +212,7 @@ Commercial support is available at
 </body>
 </html>
 ```
-##例子：
+## 例子：
 
 根据namespace来指定后端service，host主机名可以自定义指定
 ```
