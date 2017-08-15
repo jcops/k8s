@@ -238,6 +238,8 @@ spec:
           serviceName: kubernetes-dashboard
           servicePort: 80
 ```
+```
+
 # curl fix.es.io
 {
   "name" : "Thermo",
@@ -257,9 +259,6 @@ spec:
       Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
       experience.</p>
     <![endif]--> <kd-chrome layout="column" layout-fill> </kd-chrome> <script src="static/vendor.6952e31e.js"></script> <script src="api/appConfig.json"></script> <script src="static/app.8a6b8127.js"></script> </body> </html> 
-
-```
-访问
 ```
 
 如果你需要在kubernetes集群以外访问就需要设置DNS，或者修改本机的hosts文件。
