@@ -212,13 +212,62 @@ Commercial support is available at
 </body>
 </html>
 ```
+##例子：
+
+根据namespace来指定后端service，host主机名可以自定义指定
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+  namespace: kube-system
+spec:
+  rules:
+  - host: fix.es.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: elasticsearch-logging
+          servicePort: 9200
+  - host: fix.dash.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 80
+```
+# curl fix.es.io
+{
+  "name" : "Thermo",
+  "cluster_name" : "elasticsearch",
+  "version" : {
+    "number" : "2.3.2",
+    "build_hash" : "b9e4a6acad4008027e4038f6abed7f7dba346f94",
+    "build_timestamp" : "2016-04-21T16:03:47Z",
+    "build_snapshot" : false,
+    "lucene_version" : "5.5.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+# curl fix.dash.io
+ <!doctype html> <html ng-app="kubernetesDashboard"> <head> <meta charset="utf-8"> <title ng-controller="kdTitle as $ctrl" ng-bind="$ctrl.title()"></title> <link rel="icon" type="image/png" href="assets/images/kubernetes-logo.png"> <meta name="viewport" content="width=device-width"> <link rel="stylesheet" href="static/vendor.4f4b705f.css"> <link rel="stylesheet" href="static/app.93b90a74.css"> </head> <body> <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
+      experience.</p>
+    <![endif]--> <kd-chrome layout="column" layout-fill> </kd-chrome> <script src="static/vendor.6952e31e.js"></script> <script src="api/appConfig.json"></script> <script src="static/app.8a6b8127.js"></script> </body> </html> 
+
+```
+访问
+```
 
 如果你需要在kubernetes集群以外访问就需要设置DNS，或者修改本机的hosts文件。
 
 在其中加入：
 
 ```
-192.168.1.122 traefik.nginx.io
+192.168.1.122 traefik.nginx.io fix.es.io fix.dash.io
 
 ```
 
